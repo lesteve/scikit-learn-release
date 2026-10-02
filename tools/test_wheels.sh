@@ -4,7 +4,7 @@ set -e
 set -x
 
 PROJECT_DIR="$1"
-SCIKIT_LEARN_DIR=$(realpath $PROJECT_DIR/../scikit-learn)
+SCIKIT_LEARN_DIR=$(python -c 'import os, sys; print(os.path.realpath(sys.argv[1]))' "$PROJECT_DIR/../scikit-learn")
 
 python $PROJECT_DIR/tools/check_license.py
 
